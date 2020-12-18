@@ -150,7 +150,7 @@ class Detail extends Component {
       detailName,
       detailImageUri,
       detailPriceOne,
-      detailPriceTwo
+      detailDescription
     } = this.props.navigation.state.params;
     return (
       <View
@@ -179,32 +179,6 @@ class Detail extends Component {
           {/* image */}
 
           {/* ChoosingSizeBox */}
-          {this.state.defaultBox === "colorBox" ? (
-            <ChoosingSizeBox
-              label="Choosing a color"
-              color={true}
-              top={this.colorBox}
-              opacity={animatedColorBoxOpacity}
-              firstItem="black"
-              secondItem="yellow"
-              thirdItem="blue"
-              onPressFirst={() => this.onChooseColor("black")}
-              onPressSecond={() => this.onChooseColor("yellow")}
-              onPressThird={() => this.onChooseColor("blue")}
-            />
-          ) : (
-            <ChoosingSizeBox
-              label="Choosing a size"
-              top={this.sizeBox}
-              opacity={animatedSizeBoxOpacity}
-              firstItem="small"
-              secondItem="medium"
-              thirdItem="large"
-              onPressFirst={() => this.onChooseItem("small")}
-              onPressSecond={() => this.onChooseItem("medium")}
-              onPressThird={() => this.onChooseItem("large")}
-            />
-          )}
           {/* ChoosingSizeBox */}
 
           {/* priceBox */}
@@ -226,57 +200,6 @@ class Detail extends Component {
             >
               {/* up bar */}
               {/* left */}
-              <TouchableWithoutFeedback onPress={() => this.openColorBox()}>
-                <View
-                  style={{
-                    width: wp("45%"),
-                    flexDirection: "row",
-                    borderWidth: 0.8,
-                    borderColor: this.state.colorBorderColor,
-                    borderRadius: 2,
-                    padding: 5
-                  }}
-                >
-                  <View
-                    style={{
-                      flex: 2,
-                      flexDirection: "row",
-                      alignItems: "center"
-                    }}
-                  >
-                    <View
-                      style={{
-                        backgroundColor: this.state.color,
-                        width: wp("4.5%"),
-                        height: wp("4.5%"),
-                        marginRight: 15
-                      }}
-                    />
-                    <Text
-                      style={{
-                        fontSize: 16,
-                        color: "gray",
-                        textTransform: "capitalize"
-                      }}
-                    >
-                      {this.state.color}
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      flex: 1,
-                      alignItems: "flex-end",
-                      paddingRight: 15
-                    }}
-                  >
-                    <Icon
-                      name={this.state.colorIconName}
-                      size={20}
-                      color="gray"
-                    />
-                  </View>
-                </View>
-              </TouchableWithoutFeedback>
               {/* left */}
 
               {/* right */}
@@ -348,7 +271,7 @@ class Detail extends Component {
                     textDecorationLine: "line-through"
                   }}
                 >
-                  {detailPriceTwo}
+                  $500
                 </Text>
               </View>
               {/* left */}
@@ -428,10 +351,7 @@ class Detail extends Component {
                   lineHeight: 20
                 }}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type.
+                {detailDescription}
               </Text>
             </View>
             {/* upper */}
@@ -446,51 +366,6 @@ class Detail extends Component {
               }}
             >
               {/* left */}
-              <View
-                style={{
-                  flex: 1
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 18,
-                    fontWeight: "bold",
-                    color: "#5BBC9D",
-                    marginBottom: 5
-                  }}
-                >
-                  Available Colors
-                </Text>
-                <View
-                  style={{
-                    flexDirection: "row"
-                  }}
-                >
-                  <View
-                    style={{
-                      backgroundColor: "black",
-                      width: wp("4.5%"),
-                      height: wp("4.5%"),
-                      marginRight: 15
-                    }}
-                  />
-                  <View
-                    style={{
-                      backgroundColor: "yellow",
-                      width: wp("4.5%"),
-                      height: wp("4.5%"),
-                      marginRight: 15
-                    }}
-                  />
-                  <View
-                    style={{
-                      backgroundColor: "blue",
-                      width: wp("4.5%"),
-                      height: wp("4.5%")
-                    }}
-                  />
-                </View>
-              </View>
               {/* left */}
               {/* right */}
               <View

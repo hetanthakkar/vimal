@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
 
 class TermsAndConditions extends Component {
+  componentDidMount(){
+    console.log("hey",this.props.navigation.getParam('name'))
+  }
   render() {
     return (
       <View

@@ -4,72 +4,82 @@ import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 
 class ItemList extends Component {
   render() {
-    const { imageUri, name, priceOne, priceTwo, onPress } = this.props;
+    console.log(this.props.image)
+    const { image, name, brand, price, onPress ,description} = this.props;
     return (
       <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
         <View
           style={{
+            borderWidth:0.15,
+            borderRadius:9,
             width: wp("44%"),
             marginHorizontal: 10,
-            marginTop: 10
+            marginTop: 13,
+
           }}
         >
           <View
             style={{
               width: wp("44%"),
-              height: wp("55%"),
-              marginBottom: 10
+              height: wp("35%"),
+              borderRadius:15
+            // borderBottomWidth:0.,  
+            
             }}
           >
+            
             <Image
-              source={imageUri}
+              source={{uri: image}}
               style={{
                 flex: 1,
-                width: null,
-                height: null,
-                resizeMode: "contain"
+                width:'100%',
+                borderTopLeftRadius:9,
+                borderTopRightRadius:9,
+                // borderTopRadius:19,
+                alignSelf:'center',
+                resizeMode:'contain'
               }}
             />
           </View>
           <View
             style={{
-              marginHorizontal: 5
+              marginHorizontal: 5,
+              alignSelf:'center'
             }}
           >
             <Text
               style={{
-                fontSize: 18,
-                color: "#63CBA7",
-                fontWeight: "bold"
+                marginTop:5,
+                fontSize: 15,
+                color: "black",
+                // alignSelf:'center'
               }}
             >
-              {name}
+              Name: {name}
             </Text>
-            <View
+            <Text
               style={{
-                flexDirection: "row",
-                alignItems: "center",
-                paddingTop: 5
+                fontSize: 15,
+                color: "black",
+                // fontWeight: "bold",
+                // alignSelf:'center'
               }}
             >
-              <Text
-                style={{
-                  fontSize: 14,
-                  fontWeight: "bold"
-                }}
-              >
-                ${priceOne}
-              </Text>
-              <Text
-                style={{
-                  fontSize: 12,
-                  textDecorationLine: "line-through",
-                  marginLeft: 10
-                }}
-              >
-                {priceTwo}
-              </Text>
-            </View>
+             Brand: {brand}
+            </Text>
+            
+            
+                         <Text
+              style={{
+                fontSize: 15,
+                color: "black",
+                marginBottom:5,
+                // fontWeight: "bold",
+                // alignSelf:'center'
+              }}
+            >
+              Price: $ {price}
+            </Text>
           </View>
         </View>
       </TouchableOpacity>

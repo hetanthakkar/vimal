@@ -14,8 +14,6 @@ import {
   Right,
   Button,
   Icon,
-  Title,
-  Body,
 } from "native-base";
 const screenWidth = Math.round(Dimensions.get("window").width) / 100;
 const screenHeight = Math.round(Dimensions.get("window").height) / 100;
@@ -32,558 +30,468 @@ export default class filter extends Component {
     noSort: false,
     pressed1: true,
     pressed2: false,
-    button1: "#00d2d3",
-    button2: "white",
-    button3: "white",
-    button4: "white",
-    button5: "white",
-    button6: "white",
-    button7: "white",
-    text1: "white",
-    text2: "black",
-    text3: "black",
-    text4: "black",
-    text5: "black",
-    text6: "black",
-    text7: "black",
+    pressed3: false,
+    pressed4: false,
+    pressed5: false,
+    pressed6: false,
+    pressed7: false,
   };
-  brands = async () => {
-    console.log(this.state.pressed1);
-    await this.setState({ pressed1: true });
-    console.log(this.state.pressed1);
-    if (this.state.pressed1) {
-      this.setState({ button1: "#00d2d3" });
-      this.setState({ button2: "white" });
-      this.setState({ button3: "white" });
-      this.setState({ button4: "white" });
-      this.setState({ button5: "white" });
-      this.setState({ button6: "white" });
-      this.setState({ button7: "white" });
-      this.setState({ text1: "white" });
-      this.setState({ text2: "black" });
-      this.setState({ text3: "black" });
-      this.setState({ text4: "black" });
-      this.setState({ text5: "black" });
-      this.setState({ text6: "black" });
-      this.setState({ text7: "black" });
-      this.setState({ pressed2: false });
-      this.setState({ pressed3: false });
-      this.setState({ pressed4: false });
-      this.setState({ pressed5: false });
-      this.setState({ pressed6: false });
-      this.setState({ pressed7: false });
-    }
+  apply = () => {
+    this.props.navigation.navigate("TermsAndConditions",{name:'hetan'})
+  }
+  brands = () => {
+    this.setState({ pressed1: true, pressed5: false, pressed2: false, pressed3: false, pressed4: false, pressed6: false, pressed7: false });
   };
-  price = async () => {
-    await this.setState({ pressed2: true });
-    if (this.state.pressed2) {
-      this.setState({ button2: "#00d2d3" });
-      this.setState({ button1: "white" });
-      this.setState({ button3: "white" });
-      this.setState({ button4: "white" });
-      this.setState({ button5: "white" });
-      this.setState({ button6: "white" });
-      this.setState({ button7: "white" });
-      this.setState({ text2: "white" });
-      this.setState({ text1: "black" });
-      this.setState({ text3: "black" });
-      this.setState({ text4: "black" });
-      this.setState({ text5: "black" });
-      this.setState({ text6: "black" });
-      this.setState({ text7: "black" });
-      this.setState({ pressed1: false });
-      this.setState({ pressed3: false });
-      this.setState({ pressed4: false });
-      this.setState({ pressed5: false });
-      this.setState({ pressed6: false });
-      this.setState({ pressed7: false });
-    }
+  price = () => {
+    this.setState({ pressed2: true, pressed1: false, pressed5: false, pressed3: false, pressed4: false, pressed6: false, pressed7: false });
+  };
+  color = () => {
+    this.setState({ pressed3: true, pressed1: false, pressed2: false, pressed5: false, pressed4: false, pressed6: false, pressed7: false });
   };
 
-  color = async () => {
-    await this.setState({ pressed3: true });
-    if (this.state.pressed3) {
-      this.setState({ button3: "#00d2d3" });
-      this.setState({ button1: "white" });
-      this.setState({ button2: "white" });
-      this.setState({ button4: "white" });
-      this.setState({ button5: "white" });
-      this.setState({ button6: "white" });
-      this.setState({ button7: "white" });
-      this.setState({ text3: "white" });
-      this.setState({ text2: "black" });
-      this.setState({ text1: "black" });
-      this.setState({ text4: "black" });
-      this.setState({ text5: "black" });
-      this.setState({ text6: "black" });
-      this.setState({ text7: "black" });
-      this.setState({ pressed1: false });
-      this.setState({ pressed2: false });
-      this.setState({ pressed5: false });
-      this.setState({ pressed4: false });
-      this.setState({ pressed6: false });
-      this.setState({ pressed7: false });
-    }
+  lcolor = () => {
+    this.setState({ pressed4: true, pressed1: false, pressed2: false, pressed3: false, pressed5: false, pressed6: false, pressed7: false });
   };
 
-  lcolor = async () => {
-    await this.setState({ pressed4: true });
-    if (this.state.pressed4) {
-      this.setState({ button4: "#00d2d3" });
-      this.setState({ button1: "white" });
-      this.setState({ button2: "white" });
-      this.setState({ button3: "white" });
-      this.setState({ button5: "white" });
-      this.setState({ button6: "white" });
-      this.setState({ button7: "white" });
-      this.setState({ text4: "white" });
-      this.setState({ text2: "black" });
-      this.setState({ text3: "black" });
-      this.setState({ text1: "black" });
-      this.setState({ text5: "black" });
-      this.setState({ text6: "black" });
-      this.setState({ text7: "black" });
-      this.setState({ pressed1: false });
-      this.setState({ pressed2: false });
-      this.setState({ pressed3: false });
-      this.setState({ pressed5: false });
-      this.setState({ pressed6: false });
-      this.setState({ pressed7: false });
-    }
+  size = () => {
+    this.setState({ pressed5: true, pressed1: false, pressed2: false, pressed3: false, pressed4: false, pressed6: false, pressed7: false });
   };
-
-  size = async () => {
-    await this.setState({ pressed5: true });
-    if (this.state.pressed5) {
-      this.setState({ button5: "#00d2d3" });
-      this.setState({ button1: "white" });
-      this.setState({ button2: "white" });
-      this.setState({ button3: "white" });
-      this.setState({ button4: "white" });
-      this.setState({ button6: "white" });
-      this.setState({ button7: "white" });
-      this.setState({ text5: "white" });
-      this.setState({ text2: "black" });
-      this.setState({ text3: "black" });
-      this.setState({ text4: "black" });
-      this.setState({ text1: "black" });
-      this.setState({ text6: "black" });
-      this.setState({ text7: "black" });
-      this.setState({ pressed1: false });
-      this.setState({ pressed2: false });
-      this.setState({ pressed3: false });
-      this.setState({ pressed4: false });
-      this.setState({ pressed6: false });
-      this.setState({ pressed7: false });
-    }
+  sort = () => {
+    this.setState({ pressed6: true, pressed1: false, pressed2: false, pressed3: false, pressed4: false, pressed5: false, pressed7: false });
   };
-  sort = async () => {
-    await this.setState({ pressed6: true });
-    if (this.state.pressed6) {
-      this.setState({ button6: "#00d2d3" });
-      this.setState({ button7: "white" });
-      this.setState({ button5: "white" });
-      this.setState({ button1: "white" });
-      this.setState({ button2: "white" });
-      this.setState({ button3: "white" });
-      this.setState({ button4: "white" });
-      this.setState({ text6: "white" });
-      this.setState({ text2: "black" });
-      this.setState({ text3: "black" });
-      this.setState({ text4: "black" });
-      this.setState({ text5: "black" });
-      this.setState({ text7: "black" });
-      this.setState({ text1: "black" });
-      this.setState({ pressed1: false });
-      this.setState({ pressed2: false });
-      this.setState({ pressed3: false });
-      this.setState({ pressed4: false });
-      this.setState({ pressed5: false });
-      this.setState({ pressed7: false });
-    }
-  };
-  frameShape = async () => {
-    await this.setState({ pressed7: true });
-    if (this.state.pressed7) {
-      this.setState({ button7: "#00d2d3" });
-      this.setState({ button6: "white" });
-      this.setState({ button5: "white" });
-      this.setState({ button1: "white" });
-      this.setState({ button2: "white" });
-      this.setState({ button3: "white" });
-      this.setState({ button4: "white" });
-      this.setState({ text7: "white" });
-      this.setState({ text2: "black" });
-      this.setState({ text3: "black" });
-      this.setState({ text4: "black" });
-      this.setState({ text5: "black" });
-      this.setState({ text6: "black" });
-      this.setState({ text1: "black" });
-      this.setState({ pressed1: false });
-      this.setState({ pressed2: false });
-      this.setState({ pressed3: false });
-      this.setState({ pressed4: false });
-      this.setState({ pressed5: false });
-      this.setState({ pressed6: false });
-    }
+  frameShape = () => {
+    this.setState({ pressed7: true, pressed1: false, pressed2: false, pressed3: false, pressed4: false, pressed6: false, pressed5: false });
   };
   toHigh = () => {
-    this.setState({ noSort: false });
-    this.setState({ toLow: false });
-    this.setState({ toHigh: true });
+    this.setState({ sort: "High" });
   };
   toLow = () => {
-    this.setState({ noSort: false });
-    this.setState({ toLow: true });
-    this.setState({ toHigh: false });
+    this.setState({ sort: 'Low' });
   };
   noSort = () => {
-    this.setState({ noSort: true });
-    this.setState({ toLow: false });
-    this.setState({ toHigh: false });
+    this.setState({ sort: 'New' });
   };
   price1 = async () => {
-    if (!this.state.price.includes(1)) {
-      let price = [...this.state.price, 1];
+    if (!this.state.price.includes('200-400')) {
+      let price = [...this.state.price, '200-400'];
       await this.setState({ price });
       console.log(this.state.price);
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(1), 1);
+      temp.splice(temp.indexOf('200-400'), 1);
       this.setState({ price: temp });
     }
   };
 
   price2 = () => {
-    if (!this.state.price.includes(2)) {
-      let price = [...this.state.price, 2];
+    if (!this.state.price.includes('400-600')) {
+      let price = [...this.state.price, '400-600'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(2), 1);
+      temp.splice(temp.indexOf('400-600'), 1);
       this.setState({ price: temp });
     }
   };
 
   price3 = () => {
-    if (!this.state.price.includes(3)) {
-      let price = [...this.state.price, 3];
+    if (!this.state.price.includes('600-800')) {
+      let price = [...this.state.price, '600-800'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(3), 1);
+      temp.splice(temp.indexOf('600-800'), 1);
       this.setState({ price: temp });
     }
   };
   price4 = () => {
-    if (!this.state.price.includes(4)) {
-      let price = [...this.state.price, 4];
+    if (!this.state.price.includes('800-1000')) {
+      let price = [...this.state.price, '800-1000'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(4), 1);
+      temp.splice(temp.indexOf('800-1000'), 1);
       this.setState({ price: temp });
     }
   };
   price5 = () => {
-    if (!this.state.price.includes(5)) {
-      let price = [...this.state.price, 5];
+    if (!this.state.price.includes('1000-1200')) {
+      let price = [...this.state.price, '1000-1200'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(5), 1);
+      temp.splice(temp.indexOf('1000-1200'), 1);
       this.setState({ price: temp });
     }
   };
   price6 = () => {
-    if (!this.state.price.includes(6)) {
-      let price = [...this.state.price, 6];
+    if (!this.state.price.includes('1200-1500')) {
+      let price = [...this.state.price, '1200-1500'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(6), 1);
+      temp.splice(temp.indexOf('1200-1500'), 1);
       this.setState({ price: temp });
     }
   };
 
   price7 = () => {
-    if (!this.state.price.includes(7)) {
-      let price = [...this.state.price, 7];
+    if (!this.state.price.includes('1500-1800')) {
+      let price = [...this.state.price, '1500-1800'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(7), 1);
+      temp.splice(temp.indexOf('1500-1800'), 1);
       this.setState({ price: temp });
     }
   };
 
   price8 = () => {
-    if (!this.state.price.includes(8)) {
-      let price = [...this.state.price, 8];
+    if (!this.state.price.includes('2000-2500')) {
+      let price = [...this.state.price, '2000-2500'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(8), 1);
+      temp.splice(temp.indexOf('2000-2500'), 1);
       this.setState({ price: temp });
     }
   };
 
   price9 = () => {
-    if (!this.state.price.includes(9)) {
-      let price = [...this.state.price, 9];
+    if (!this.state.price.includes('above 2500')) {
+      let price = [...this.state.price, 'above 2500'];
       this.setState({ price });
     } else {
       let temp = this.state.price;
-      temp.splice(temp.indexOf(9), 1);
+      temp.splice(temp.indexOf('above 2500'), 1);
       this.setState({ price: temp });
     }
   };
   brand1 = () => {
-    if (!this.state.brand.includes(1)) {
-      let brand = [...this.state.brand, 1];
+    if (!this.state.brand.includes('Fastrack')) {
+      console.log('sdjbfkjb')
+      let brand = [...this.state.brand, 'Fastrack'];
       this.setState({ brand });
     } else {
+      console.log("lksndlkj")
       let temp = this.state.brand;
-      temp.splice(temp.indexOf(1), 1);
+      temp.splice(temp.indexOf('Fastrack'), 1);
       this.setState({ brand: temp });
     }
   };
 
   brand2 = () => {
-    if (!this.state.brand.includes(2)) {
-      let brand = [...this.state.brand, 2];
+    if (!this.state.brand.includes('Wolf Eyes')) {
+      let brand = [...this.state.brand, 'Wolf Eyes'];
       this.setState({ brand });
     } else {
       let temp = this.state.brand;
-      temp.splice(temp.indexOf(2), 1);
+      temp.splice(temp.indexOf('Wolf Eyes'), 1);
       this.setState({ brand: temp });
     }
   };
 
   brand3 = () => {
-    if (!this.state.brand.includes(3)) {
-      let brand = [...this.state.brand, 3];
+    if (!this.state.brand.includes('Titan')) {
+      let brand = [...this.state.brand, 'Titan'];
       this.setState({ brand });
     } else {
       let temp = this.state.brand;
-      temp.splice(temp.indexOf(3), 1);
+      temp.splice(temp.indexOf('Titan'), 1);
       this.setState({ brand: temp });
     }
   };
 
   brand4 = () => {
-    if (!this.state.brand.includes(4)) {
-      let brand = [...this.state.brand, 4];
+    if (!this.state.brand.includes('Velocity')) {
+      let brand = [...this.state.brand, 'Velocity'];
       this.setState({ brand });
     } else {
       let temp = this.state.brand;
-      temp.splice(temp.indexOf(4), 1);
+      temp.splice(temp.indexOf('Velocity'), 1);
       this.setState({ brand: temp });
     }
   };
 
   brand5 = () => {
-    if (!this.state.brand.includes(5)) {
-      let brand = [...this.state.brand, 5];
+    if (!this.state.brand.includes('Image')) {
+      let brand = [...this.state.brand, 'Image'];
       this.setState({ brand });
     } else {
       let temp = this.state.brand;
-      temp.splice(temp.indexOf(5), 1);
+      temp.splice(temp.indexOf('Image'), 1);
       this.setState({ brand: temp });
     }
   };
   brand6 = () => {
-    if (!this.state.brand.includes(6)) {
-      let brand = [...this.state.brand, 6];
+    if (!this.state.brand.includes('Idee')) {
+      let brand = [...this.state.brand, 'Idee'];
       this.setState({ brand });
     } else {
       let temp = this.state.brand;
-      temp.splice(temp.indexOf(6), 1);
+      temp.splice(temp.indexOf('Idee'), 1);
       this.setState({ brand: temp });
     }
   };
 
   brand7 = () => {
-    if (!this.state.brand.includes(7)) {
-      let brand = [...this.state.brand, 7];
+    if (!this.state.brand.includes('Irus')) {
+      let brand = [...this.state.brand, 'Irus'];
       this.setState({ brand });
     } else {
       let temp = this.state.brand;
-      temp.splice(temp.indexOf(7), 1);
+      temp.splice(temp.indexOf('Irus'), 1);
       this.setState({ brand: temp });
     }
   };
 
+  brand8 = () => {
+    if (!this.state.brand.includes('K & D')) {
+      let brand = [...this.state.brand, 'K & D'];
+      this.setState({ brand });
+    } else {
+      let temp = this.state.brand;
+      temp.splice(temp.indexOf('K & D'), 1);
+      this.setState({ brand: temp });
+    }
+  };
+
+  brand9 = () => {
+    if (!this.state.brand.includes('Kyaans')) {
+      let brand = [...this.state.brand, 'Kyaans'];
+      this.setState({ brand });
+    } else {
+      let temp = this.state.brand;
+      temp.splice(temp.indexOf('Kyaans'), 1);
+      this.setState({ brand: temp });
+    }
+  };
+
+  brand10 = () => {
+    if (!this.state.brand.includes('Tag Hills')) {
+      let brand = [...this.state.brand, 'Tag Hills'];
+      this.setState({ brand });
+    } else {
+      let temp = this.state.brand;
+      temp.splice(temp.indexOf('Tag Hills'), 1);
+      this.setState({ brand: temp });
+    }
+  };
+
+  brand11 = () => {
+    if (!this.state.brand.includes('Knight Horse')) {
+      let brand = [...this.state.brand, 'Knight Horse'];
+      this.setState({ brand });
+    } else {
+      let temp = this.state.brand;
+      temp.splice(temp.indexOf('Knight Horse'), 1);
+      this.setState({ brand: temp });
+    }
+  };
+
+  brand12 = () => {
+    if (!this.state.brand.includes('Elvee')) {
+      let brand = [...this.state.brand, 'Elvee'];
+      this.setState({ brand });
+    } else {
+      let temp = this.state.brand;
+      temp.splice(temp.indexOf('Elvee'), 1);
+      this.setState({ brand: temp });
+    }
+  };
+
+  brand13 = () => {
+    if (!this.state.brand.includes('Elevator')) {
+      let brand = [...this.state.brand, 'Elevator'];
+      this.setState({ brand });
+    } else {
+      let temp = this.state.brand;
+      temp.splice(temp.indexOf('Elevator'), 1);
+      this.setState({ brand: temp });
+    }
+  };
+
+
   color1 = () => {
-    if (!this.state.color.includes(1)) {
-      let color = [...this.state.color, 1];
+    if (!this.state.color.includes('black')) {
+      let color = [...this.state.color, 'black'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(1), 1);
+      temp.splice(temp.indexOf('black'), 1);
       this.setState({ color: temp });
     }
   };
   color2 = () => {
-    if (!this.state.color.includes(2)) {
-      let color = [...this.state.color, 2];
+    if (!this.state.color.includes('Bright')) {
+      let color = [...this.state.color, 'Bright'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(2), 1);
+      temp.splice(temp.indexOf('Bright'), 1);
       this.setState({ color: temp });
     }
   };
   color3 = () => {
-    if (!this.state.color.includes(3)) {
-      let color = [...this.state.color, 3];
+    if (!this.state.color.includes('Neutral')) {
+      let color = [...this.state.color, 'Neutral'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(3), 1);
+      temp.splice(temp.indexOf('Neutral'), 1);
       this.setState({ color: temp });
     }
   };
   color4 = () => {
-    if (!this.state.color.includes(4)) {
-      let color = [...this.state.color, 4];
+    if (!this.state.color.includes('Blue')) {
+      let color = [...this.state.color, 'Blue'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(4), 1);
+      temp.splice(temp.indexOf('Blue'), 1);
       this.setState({ color: temp });
     }
   };
   color5 = () => {
-    if (!this.state.color.includes(5)) {
-      let color = [...this.state.color, 5];
+    if (!this.state.color.includes('Grey')) {
+      let color = [...this.state.color, 'Grey'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(5), 1);
+      temp.splice(temp.indexOf('Grey'), 1);
       this.setState({ color: temp });
     }
   };
   color6 = () => {
-    if (!this.state.color.includes(6)) {
-      let color = [...this.state.color, 6];
+    if (!this.state.color.includes('Brown')) {
+      let color = [...this.state.color, 'Brown'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(6), 1);
+      temp.splice(temp.indexOf('Brown'), 1);
       this.setState({ color: temp });
     }
   };
   color7 = () => {
-    if (!this.state.color.includes(7)) {
-      let color = [...this.state.color, 7];
+    if (!this.state.color.includes('Green')) {
+      let color = [...this.state.color, 'Green'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(7), 1);
+      temp.splice(temp.indexOf('Green'), 1);
       this.setState({ color: temp });
     }
   };
   color8 = () => {
-    if (!this.state.color.includes(8)) {
-      let color = [...this.state.color, 8];
+    if (!this.state.color.includes('Golden')) {
+      let color = [...this.state.color, 'Golden'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(8), 1);
+      temp.splice(temp.indexOf('Golden'), 1);
       this.setState({ color: temp });
     }
   };
   color9 = () => {
-    if (!this.state.color.includes(9)) {
-      let color = [...this.state.color, 9];
+    if (!this.state.color.includes('Red')) {
+      let color = [...this.state.color, 'Red'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(9), 1);
+      temp.splice(temp.indexOf('Red'), 1);
       this.setState({ color: temp });
     }
   };
 
   color10 = () => {
-    if (!this.state.color.includes(10)) {
-      let color = [...this.state.color, 10];
+    if (!this.state.color.includes('Silver')) {
+      let color = [...this.state.color, 'Silver'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(10), 1);
+      temp.splice(temp.indexOf('Silver'), 1);
       this.setState({ color: temp });
     }
   };
   color11 = () => {
-    if (!this.state.color.includes(11)) {
-      let color = [...this.state.color, 11];
+    if (!this.state.color.includes('Pink')) {
+      let color = [...this.state.color, 'Pink'];
       this.setState({ color });
     } else {
       let temp = this.state.color;
-      temp.splice(temp.indexOf(11), 1);
+      temp.splice(temp.indexOf('Pink'), 1);
+      this.setState({ color: temp });
+    }
+  };
+  color12 = () => {
+    if (!this.state.color.includes('Orange')) {
+      let color = [...this.state.color, 'Orange'];
+      this.setState({ color });
+    } else {
+      let temp = this.state.color;
+      temp.splice(temp.indexOf('Orange'), 1);
       this.setState({ color: temp });
     }
   };
 
   lcolor1 = () => {
-    if (!this.state.lcolor.includes(1)) {
-      let lcolor = [...this.state.lcolor, 1];
+    if (!this.state.lcolor.includes('Black')) {
+      let lcolor = [...this.state.lcolor, 'Black'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(1), 1);
+      temp.splice(temp.indexOf('Black'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor2 = () => {
-    if (!this.state.lcolor.includes(2)) {
-      let lcolor = [...this.state.lcolor, 2];
+    if (!this.state.lcolor.includes('Bronze')) {
+      let lcolor = [...this.state.lcolor, 'Bronze'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(2), 1);
+      temp.splice(temp.indexOf('Bronze'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor3 = () => {
-    if (!this.state.lcolor.includes(3)) {
-      let lcolor = [...this.state.lcolor, 3];
+    if (!this.state.lcolor.includes('Brown')) {
+      let lcolor = [...this.state.lcolor, 'Brown'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(3), 1);
+      temp.splice(temp.indexOf('Brown'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor4 = () => {
-    if (!this.state.lcolor.includes(4)) {
-      let lcolor = [...this.state.lcolor, 4];
+    if (!this.state.lcolor.includes('Maroon')) {
+      let lcolor = [...this.state.lcolor, 'Maroon'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(4), 1);
+      temp.splice(temp.indexOf('Maroon'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor5 = () => {
-    if (!this.state.lcolor.includes(5)) {
-      let lcolor = [...this.state.lcolor, 5];
+    if (!this.state.lcolor.includes('Grey')) {
+      let lcolor = [...this.state.lcolor, 'Grey'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(5), 1);
+      temp.splice(temp.indexOf('Grey'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor6 = () => {
-    if (!this.state.lcolor.includes(6)) {
-      let lcolor = [...this.state.lcolor, 6];
+    if (!this.state.lcolor.includes('Pink')) {
+      let lcolor = [...this.state.lcolor, 'Pink'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
@@ -593,360 +501,369 @@ export default class filter extends Component {
   };
 
   lcolor7 = () => {
-    if (!this.state.lcolor.includes(7)) {
-      let lcolor = [...this.state.lcolor, 7];
+    if (!this.state.lcolor.includes('Blue')) {
+      let lcolor = [...this.state.lcolor, 'Blue'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(7), 1);
+      temp.splice(temp.indexOf('Blue'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor8 = () => {
-    if (!this.state.lcolor.includes(8)) {
-      let lcolor = [...this.state.lcolor, 8];
+    if (!this.state.lcolor.includes('Brown')) {
+      let lcolor = [...this.state.lcolor, 'Brown'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(8), 1);
+      temp.splice(temp.indexOf('Brown'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor9 = () => {
-    if (!this.state.lcolor.includes(9)) {
-      let lcolor = [...this.state.lcolor, 9];
+    if (!this.state.lcolor.includes('Green')) {
+      let lcolor = [...this.state.lcolor, 'Green'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(9), 1);
+      temp.splice(temp.indexOf('Green'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor10 = () => {
-    if (!this.state.lcolor.includes(10)) {
-      let lcolor = [...this.state.lcolor, 10];
+    if (!this.state.lcolor.includes('Grey')) {
+      let lcolor = [...this.state.lcolor, 'Grey'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(10), 1);
+      temp.splice(temp.indexOf('Grey'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor11 = () => {
-    if (!this.state.lcolor.includes(11)) {
-      let lcolor = [...this.state.lcolor, 11];
+    if (!this.state.lcolor.includes('Gold')) {
+      let lcolor = [...this.state.lcolor, 'GOld'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(11), 1);
+      temp.splice(temp.indexOf('Gold'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor12 = () => {
-    if (!this.state.lcolor.includes(12)) {
-      let lcolor = [...this.state.lcolor, 12];
+    if (!this.state.lcolor.includes('Silver')) {
+      let lcolor = [...this.state.lcolor, 'Silver'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(12), 1);
+      temp.splice(temp.indexOf('Silver'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor13 = () => {
-    if (!this.state.lcolor.includes(13)) {
-      let lcolor = [...this.state.lcolor, 13];
+    if (!this.state.lcolor.includes('Pink')) {
+      let lcolor = [...this.state.lcolor, 'Pink'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(13), 1);
+      temp.splice(temp.indexOf('Pink'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor14 = () => {
-    if (!this.state.lcolor.includes(14)) {
-      let lcolor = [...this.state.lcolor, 14];
+    if (!this.state.lcolor.includes('Purple')) {
+      let lcolor = [...this.state.lcolor, 'Purple'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(14), 1);
+      temp.splice(temp.indexOf('Purple'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor15 = () => {
-    if (!this.state.lcolor.includes(15)) {
-      let lcolor = [...this.state.lcolor, 15];
+    if (!this.state.lcolor.includes('Yellow')) {
+      let lcolor = [...this.state.lcolor, 'Yellow'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(15), 1);
+      temp.splice(temp.indexOf('Yellow'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   lcolor16 = () => {
-    if (!this.state.lcolor.includes(16)) {
-      let lcolor = [...this.state.lcolor, 16];
+    if (!this.state.lcolor.includes('Orange')) {
+      let lcolor = [...this.state.lcolor, 'Orange'];
       this.setState({ lcolor });
     } else {
       let temp = this.state.lcolor;
-      temp.splice(temp.indexOf(16), 1);
+      temp.splice(temp.indexOf('Orange'), 1);
       this.setState({ lcolor: temp });
     }
   };
 
   size1 = () => {
-    if (!this.state.size.includes(1)) {
-      let size = [...this.state.size, 1];
+    if (!this.state.size.includes('Small')) {
+      let size = [...this.state.size, 'Small'];
       this.setState({ size });
     } else {
       let temp = this.state.size;
-      temp.splice(temp.indexOf(1), 1);
+      temp.splice(temp.indexOf('Small'), 1);
       this.setState({ size: temp });
     }
   };
 
   size2 = () => {
-    if (!this.state.size.includes(2)) {
-      let size = [...this.state.size, 2];
+    if (!this.state.size.includes('Medium')) {
+      let size = [...this.state.size, 'Medium'];
       this.setState({ size });
     } else {
       let temp = this.state.size;
-      temp.splice(temp.indexOf(2), 1);
+      temp.splice(temp.indexOf('Medium'), 1);
       this.setState({ size: temp });
     }
   };
 
   size3 = () => {
-    if (!this.state.size.includes(3)) {
-      let size = [...this.state.size, 3];
+    if (!this.state.size.includes('Large')) {
+      let size = [...this.state.size, 'Large'];
       this.setState({ size });
     } else {
       let temp = this.state.size;
-      temp.splice(temp.indexOf(3), 1);
+      temp.splice(temp.indexOf('Large'), 1);
       this.setState({ size: temp });
     }
   };
   shape1 = () => {
-    if (!this.state.shape.includes(1)) {
-      let shape = [...this.state.shape, 1];
+    if (!this.state.shape.includes('Aviator')) {
+      let shape = [...this.state.shape, 'Aviator'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(1), 1);
+      temp.splice(temp.indexOf('Aviator'), 1);
       this.setState({ shape: temp });
     }
   };
   shape2 = () => {
-    if (!this.state.shape.includes(2)) {
-      let shape = [...this.state.shape, 2];
+    if (!this.state.shape.includes('Clubmaster')) {
+      let shape = [...this.state.shape, 'Clubmaster'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(2), 1);
+      temp.splice(temp.indexOf('Clubmaster'), 1);
       this.setState({ shape: temp });
     }
   };
   shape3 = () => {
-    if (!this.state.shape.includes(3)) {
-      let shape = [...this.state.shape, 3];
+    if (!this.state.shape.includes('Pilot')) {
+      let shape = [...this.state.shape, 'Pilot'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(3), 1);
+      temp.splice(temp.indexOf('Pilot'), 1);
       this.setState({ shape: temp });
     }
   };
   shape4 = () => {
-    if (!this.state.shape.includes(4)) {
-      let shape = [...this.state.shape, 4];
+    if (!this.state.shape.includes('Maroon')) {
+      let shape = [...this.state.shape, 'Maroon'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(4), 1);
+      temp.splice(temp.indexOf('Maroon'), 1);
       this.setState({ shape: temp });
     }
   };
   shape5 = () => {
-    if (!this.state.shape.includes(5)) {
-      let shape = [...this.state.shape, 5];
+    if (!this.state.shape.includes('Rectangle')) {
+      let shape = [...this.state.shape, 'Rectangle'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(5), 1);
+      temp.splice(temp.indexOf('Rectangle'), 1);
       this.setState({ shape: temp });
     }
   };
   shape6 = () => {
-    if (!this.state.shape.includes(6)) {
-      let shape = [...this.state.shape, 6];
+    if (!this.state.shape.includes('Sports')) {
+      let shape = [...this.state.shape, 'Sports'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(6), 1);
+      temp.splice(temp.indexOf('Sports'), 1);
       this.setState({ shape: temp });
     }
   };
   shape7 = () => {
-    if (!this.state.shape.includes(7)) {
-      let shape = [...this.state.shape, 7];
+    if (!this.state.shape.includes('Wayfarer')) {
+      let shape = [...this.state.shape, 'Wayfarer'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(7), 1);
+      temp.splice(temp.indexOf('Wayfarer'), 1);
       this.setState({ shape: temp });
     }
   };
   shape8 = () => {
-    if (!this.state.shape.includes(8)) {
-      let shape = [...this.state.shape, 8];
+    if (!this.state.shape.includes('Round')) {
+      let shape = [...this.state.shape, 'Round'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(8), 1);
+      temp.splice(temp.indexOf('Round'), 1);
       this.setState({ shape: temp });
     }
   };
   shape9 = () => {
-    if (!this.state.shape.includes(9)) {
-      let shape = [...this.state.shape, 9];
+    if (!this.state.shape.includes('Oval')) {
+      let shape = [...this.state.shape, 'Oval'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(9), 1);
+      temp.splice(temp.indexOf('Oval'), 1);
       this.setState({ shape: temp });
     }
   };
   shape10 = () => {
-    if (!this.state.shape.includes(10)) {
-      let shape = [...this.state.shape, 10];
+    if (!this.state.shape.includes('Cateye')) {
+      let shape = [...this.state.shape, 'Cateye'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(10), 1);
+      temp.splice(temp.indexOf('Cateye'), 1);
       this.setState({ shape: temp });
     }
   };
   shape11 = () => {
-    if (!this.state.shape.includes(11)) {
-      let shape = [...this.state.shape, 11];
+    if (!this.state.shape.includes('Wraparound')) {
+      let shape = [...this.state.shape, 'Wraparound'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(11), 1);
+      temp.splice(temp.indexOf('Wraparound'), 1);
       this.setState({ shape: temp });
     }
   };
   shape12 = () => {
-    if (!this.state.shape.includes(12)) {
-      let shape = [...this.state.shape, 12];
+    if (!this.state.shape.includes('Bugeye')) {
+      let shape = [...this.state.shape, 'Bugeye'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(12), 1);
+      temp.splice(temp.indexOf('Bugeye'), 1);
       this.setState({ shape: temp });
     }
   };
   shape13 = () => {
-    if (!this.state.shape.includes(13)) {
-      let shape = [...this.state.shape, 13];
+    if (!this.state.shape.includes('Square')) {
+      let shape = [...this.state.shape, 'Square'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(13), 1);
+      temp.splice(temp.indexOf('Square'), 1);
       this.setState({ shape: temp });
     }
   };
   shape14 = () => {
-    if (!this.state.shape.includes(14)) {
-      let shape = [...this.state.shape, 14];
+    if (!this.state.shape.includes('Navigtor')) {
+      let shape = [...this.state.shape, 'Navigator'];
       this.setState({ shape });
     } else {
       let temp = this.state.shape;
-      temp.splice(temp.indexOf(14), 1);
+      temp.splice(temp.indexOf('Navigator'), 1);
       this.setState({ shape: temp });
     }
   };
 
   ischecked = (val) => {
-    if (val == 1 && this.state.price.includes(1)) return true;
-    if (val == 2 && this.state.price.includes(2)) return true;
-    if (val == 3 && this.state.price.includes(3)) return true;
-    if (val == 4 && this.state.price.includes(4)) return true;
-    if (val == 5 && this.state.price.includes(5)) return true;
-    if (val == 6 && this.state.price.includes(6)) return true;
-    if (val == 7 && this.state.price.includes(7)) return true;
-    if (val == 8 && this.state.price.includes(8)) return true;
-    if (val == 9 && this.state.price.includes(9)) return true;
+    if (val == 1 && this.state.price.includes('200-400')) return true;
+    if (val == 2 && this.state.price.includes('400-600')) return true;
+    if (val == 3 && this.state.price.includes('600-800')) return true;
+    if (val == 4 && this.state.price.includes('800-1000')) return true;
+    if (val == 5 && this.state.price.includes('1000-1200')) return true;
+    if (val == 6 && this.state.price.includes('1200-1500')) return true;
+    if (val == 7 && this.state.price.includes('1500-1800')) return true;
+    if (val == 8 && this.state.price.includes('2000-2500')) return true;
+    if (val == 9 && this.state.price.includes('above 2500')) return true;
   };
   isBrandchecked = (val) => {
-    if (val == 1 && this.state.brand.includes(1)) return true;
-    if (val == 2 && this.state.brand.includes(2)) return true;
-    if (val == 3 && this.state.brand.includes(3)) return true;
-    if (val == 4 && this.state.brand.includes(4)) return true;
-    if (val == 5 && this.state.brand.includes(5)) return true;
-    if (val == 6 && this.state.brand.includes(6)) return true;
+    if (val == 1 && this.state.brand.includes('Fastrack')) return true;
+    if (val == 2 && this.state.brand.includes('Wolf Eyes')) return true;
+    if (val == 3 && this.state.brand.includes('Titan')) return true;
+    if (val == 4 && this.state.brand.includes('Velocity')) return true;
+    if (val == 5 && this.state.brand.includes('Image')) return true;
+    if (val == 6 && this.state.brand.includes('Idee')) return true;
+    if (val == 7 && this.state.brand.includes('Irus')) return true;
+    if (val == 8 && this.state.brand.includes('K & D')) return true;
+    if (val == 9 && this.state.brand.includes('Kyaans')) return true;
+    if (val == 10 && this.state.brand.includes('Tag Hills')) return true;
+    if (val == 11 && this.state.brand.includes('Knight Horse')) return true;
+    if (val == 12 && this.state.brand.includes('Elvee')) return true;
+    if (val == 13 && this.state.brand.includes('Elevator')) return true;
   };
   isColorchecked = (val) => {
-    if (val == 1 && this.state.color.includes(1)) return true;
-    if (val == 2 && this.state.color.includes(2)) return true;
-    if (val == 3 && this.state.color.includes(3)) return true;
-    if (val == 4 && this.state.color.includes(4)) return true;
-    if (val == 5 && this.state.color.includes(5)) return true;
-    if (val == 6 && this.state.color.includes(6)) return true;
-    if (val == 7 && this.state.color.includes(7)) return true;
-    if (val == 8 && this.state.color.includes(8)) return true;
-    if (val == 9 && this.state.color.includes(9)) return true;
-    if (val == 10 && this.state.color.includes(10)) return true;
-    if (val == 11 && this.state.color.includes(11)) return true;
+    if (val == 1 && this.state.color.includes('Black')) return true;
+    if (val == 2 && this.state.color.includes('Bright')) return true;
+    if (val == 3 && this.state.color.includes('Neutral')) return true;
+    if (val == 4 && this.state.color.includes('Blue')) return true;
+    if (val == 5 && this.state.color.includes('Grey')) return true;
+    if (val == 6 && this.state.color.includes('Brown')) return true;
+    if (val == 7 && this.state.color.includes('Green')) return true;
+    if (val == 8 && this.state.color.includes('Golden')) return true;
+    if (val == 9 && this.state.color.includes('Red')) return true;
+    if (val == 10 && this.state.color.includes('Silver')) return true;
+    if (val == 11 && this.state.color.includes('Pink')) return true;
+    if (val == 12 && this.state.color.includes('Orange')) return true;
+
   };
   isSizechecked = (val) => {
-    if (val == 1 && this.state.size.includes(1)) return true;
-    if (val == 2 && this.state.size.includes(2)) return true;
-    if (val == 3 && this.state.size.includes(3)) return true;
+    if (val == 1 && this.state.size.includes('Small')) return true;
+    if (val == 2 && this.state.size.includes('Medium')) return true;
+    if (val == 3 && this.state.size.includes('Large')) return true;
   };
   isShapechecked = (val) => {
-    if (val == 1 && this.state.shape.includes(1)) return true;
-    if (val == 2 && this.state.shape.includes(2)) return true;
-    if (val == 3 && this.state.shape.includes(3)) return true;
-    if (val == 4 && this.state.shape.includes(4)) return true;
-    if (val == 5 && this.state.shape.includes(5)) return true;
-    if (val == 6 && this.state.shape.includes(6)) return true;
-    if (val == 7 && this.state.shape.includes(7)) return true;
-    if (val == 8 && this.state.shape.includes(8)) return true;
-    if (val == 9 && this.state.shape.includes(9)) return true;
-    if (val == 10 && this.state.shape.includes(10)) return true;
-    if (val == 11 && this.state.shape.includes(11)) return true;
-    if (val == 12 && this.state.shape.includes(12)) return true;
-    if (val == 13 && this.state.shape.includes(13)) return true;
-    if (val == 14 && this.state.shape.includes(14)) return true;
+    if (val == 1 && this.state.shape.includes('Aviator')) return true;
+    if (val == 2 && this.state.shape.includes('Clubmaster')) return true;
+    if (val == 3 && this.state.shape.includes('Pilot')) return true;
+    if (val == 4 && this.state.shape.includes('Maroon')) return true;
+    if (val == 5 && this.state.shape.includes('Rectangle')) return true;
+    if (val == 6 && this.state.shape.includes('Sports')) return true;
+    if (val == 7 && this.state.shape.includes('Wayfarer')) return true;
+    if (val == 8 && this.state.shape.includes('Round')) return true;
+    if (val == 9 && this.state.shape.includes('Oval')) return true;
+    if (val == 10 && this.state.shape.includes('Cateye')) return true;
+    if (val == 11 && this.state.shape.includes('Wraparound')) return true;
+    if (val == 12 && this.state.shape.includes('Bugeye')) return true;
+    if (val == 13 && this.state.shape.includes('Square')) return true;
+    if (val == 14 && this.state.shape.includes('Navigator')) return true;
   };
 
   isLcolorchecked = (val) => {
-    if (val == 1 && this.state.lcolor.includes(1)) return true;
-    if (val == 2 && this.state.lcolor.includes(2)) return true;
-    if (val == 3 && this.state.lcolor.includes(3)) return true;
-    if (val == 4 && this.state.lcolor.includes(4)) return true;
-    if (val == 5 && this.state.lcolor.includes(5)) return true;
-    if (val == 6 && this.state.lcolor.includes(6)) return true;
-    if (val == 7 && this.state.lcolor.includes(7)) return true;
-    if (val == 8 && this.state.lcolor.includes(8)) return true;
-    if (val == 9 && this.state.lcolor.includes(9)) return true;
-    if (val == 10 && this.state.lcolor.includes(10)) return true;
-    if (val == 11 && this.state.lcolor.includes(11)) return true;
-    if (val == 12 && this.state.lcolor.includes(12)) return true;
-    if (val == 13 && this.state.lcolor.includes(13)) return true;
-    if (val == 14 && this.state.lcolor.includes(14)) return true;
-    if (val == 15 && this.state.lcolor.includes(15)) return true;
-    if (val == 16 && this.state.lcolor.includes(16)) return true;
-    if (val == 17 && this.state.lcolor.includes(17)) return true;
+    if (val == 1 && this.state.lcolor.includes('Black')) return true;
+    if (val == 2 && this.state.lcolor.includes('Bonze')) return true;
+    if (val == 3 && this.state.lcolor.includes('Brown')) return true;
+    if (val == 4 && this.state.lcolor.includes('Maroon')) return true;
+    if (val == 5 && this.state.lcolor.includes('Grey')) return true;
+    if (val == 6 && this.state.lcolor.includes('Pink')) return true;
+    if (val == 7 && this.state.lcolor.includes('Blue')) return true;
+    if (val == 8 && this.state.lcolor.includes('Blue')) return true;
+    if (val == 9 && this.state.lcolor.includes('Brown')) return true;
+    if (val == 10 && this.state.lcolor.includes('Green')) return true;
+    if (val == 11 && this.state.lcolor.includes('Grey')) return true;
+    if (val == 12 && this.state.lcolor.includes('Gold')) return true;
+    if (val == 13 && this.state.lcolor.includes('Silver')) return true;
+    if (val == 14 && this.state.lcolor.includes('Pink')) return true;
+    if (val == 15 && this.state.lcolor.includes('Purple')) return true;
+    if (val == 16 && this.state.lcolor.includes('Yellow')) return true;
+    if (val == 17 && this.state.lcolor.includes('Orange')) return true;
   };
   renderify = () => {
     if (this.state.pressed6)
@@ -963,7 +880,7 @@ export default class filter extends Component {
             >
               <Text style={{ fontSize: 15 }}>Price - Low to High</Text>
               <Radio
-                selected={this.state.toHigh}
+                selected={this.state.sort == 'High' ? true : false}
                 onPress={this.toHigh}
                 style={{ marginLeft: screenWidth * 18 }}
               />
@@ -979,7 +896,7 @@ export default class filter extends Component {
             >
               <Text style={{ fontSize: 15 }}>Price - High to Low</Text>
               <Radio
-                selected={this.state.toLow}
+                selected={this.state.sort == "Low" ? true : false}
                 onPress={this.toLow}
                 style={{ marginLeft: screenWidth * 18.5 }}
               />
@@ -995,7 +912,7 @@ export default class filter extends Component {
             >
               <Text style={{ fontSize: 15 }}>Newest First</Text>
               <Radio
-                selected={this.state.noSort}
+                selected={this.state.sort == "New" ? true : false}
                 onPress={this.noSort}
                 style={{ marginLeft: screenWidth * 29 }}
               />
@@ -1021,7 +938,7 @@ export default class filter extends Component {
                 checked={this.ischecked(1)}
                 onPress={this.price1}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 13 }}
+              // style={{ marginLeft: screenWidth * 13 }}
               />
             </View>
           </TouchableOpacity>
@@ -1039,7 +956,7 @@ export default class filter extends Component {
                 checked={this.ischecked(2)}
                 onPress={this.price2}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 13 }}
+              // style={{ marginLeft: screenWidth * 13 }}
               />
             </View>
           </TouchableOpacity>
@@ -1057,7 +974,7 @@ export default class filter extends Component {
                 checked={this.ischecked(3)}
                 onPress={this.price3}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 13 }}
+              // style={{ marginLeft: screenWidth * 13 }}
               />
             </View>
           </TouchableOpacity>
@@ -1075,7 +992,7 @@ export default class filter extends Component {
                 checked={this.ischecked(4)}
                 onPress={this.price4}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 10 }}
+              // style={{ marginLeft: screenWidth * 10 }}
               />
             </View>
           </TouchableOpacity>
@@ -1111,7 +1028,7 @@ export default class filter extends Component {
                 checked={this.ischecked(6)}
                 onPress={this.price6}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 8 }}
+              // style={{ marginLeft: screenWidth * 8 }}
               />
             </View>
           </TouchableOpacity>
@@ -1129,7 +1046,7 @@ export default class filter extends Component {
                 checked={this.ischecked(7)}
                 onPress={this.price7}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 8 }}
+              // style={{ marginLeft: screenWidth * 8 }}
               />
             </View>
           </TouchableOpacity>
@@ -1147,7 +1064,7 @@ export default class filter extends Component {
                 checked={this.ischecked(8)}
                 onPress={this.price8}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 8 }}
+              // style={{ marginLeft: screenWidth * 8 }}
               />
             </View>
           </TouchableOpacity>
@@ -1165,7 +1082,7 @@ export default class filter extends Component {
                 checked={this.ischecked(9)}
                 onPress={this.price9}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 6 }}
+              // style={{ marginLeft: screenWidth * 6 }}
               />
             </View>
           </TouchableOpacity>
@@ -1189,7 +1106,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(1)}
                 onPress={this.color1}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 35 }}
+              // style={{ marginLeft: screenWidth * 35 }}
               />
             </View>
           </TouchableOpacity>
@@ -1207,7 +1124,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(2)}
                 onPress={this.color2}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1225,7 +1142,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(3)}
                 onPress={this.color3}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 30 }}
+              // style={{ marginLeft: screenWidth * 30 }}
               />
             </View>
           </TouchableOpacity>
@@ -1243,7 +1160,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(4)}
                 onPress={this.color4}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 37 }}
+              // style={{ marginLeft: screenWidth * 37 }}
               />
             </View>
           </TouchableOpacity>
@@ -1261,7 +1178,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(5)}
                 onPress={this.color5}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 37 }}
+              // style={{ marginLeft: screenWidth * 37 }}
               />
             </View>
           </TouchableOpacity>
@@ -1279,7 +1196,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(6)}
                 onPress={this.color6}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 33 }}
+              // style={{ marginLeft: screenWidth * 33 }}
               />
             </View>
           </TouchableOpacity>
@@ -1297,7 +1214,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(7)}
                 onPress={this.color7}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1315,7 +1232,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(8)}
                 onPress={this.color8}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 32 }}
+              // style={{ marginLeft: screenWidth * 32 }}
               />
             </View>
           </TouchableOpacity>
@@ -1334,7 +1251,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(9)}
                 onPress={this.color9}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 38 }}
+              // style={{ marginLeft: screenWidth * 38 }}
               />
             </View>
           </TouchableOpacity>
@@ -1353,7 +1270,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(10)}
                 onPress={this.color10}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 35 }}
+              // style={{ marginLeft: screenWidth * 35 }}
               />
             </View>
           </TouchableOpacity>
@@ -1372,7 +1289,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(11)}
                 onPress={this.color11}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 37 }}
+              // style={{ marginLeft: screenWidth * 37 }}
               />
             </View>
           </TouchableOpacity>
@@ -1391,7 +1308,7 @@ export default class filter extends Component {
                 checked={this.isColorchecked(12)}
                 onPress={this.color12}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 31 }}
+              // style={{ marginLeft: screenWidth * 31 }}
               />
             </View>
           </TouchableOpacity>
@@ -1415,7 +1332,7 @@ export default class filter extends Component {
                 checked={this.isSizechecked(1)}
                 onPress={this.size1}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1433,7 +1350,7 @@ export default class filter extends Component {
                 checked={this.isSizechecked(2)}
                 onPress={this.size2}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 29 }}
+              // style={{ marginLeft: screenWidth * 29 }}
               />
             </View>
           </TouchableOpacity>
@@ -1451,7 +1368,7 @@ export default class filter extends Component {
                 checked={this.isSizechecked(3)}
                 onPress={this.size3}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 33 }}
+              // style={{ marginLeft: screenWidth * 33 }}
               />
             </View>
           </TouchableOpacity>
@@ -1470,7 +1387,7 @@ export default class filter extends Component {
                 justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 17 }}>Burberry</Text>
+              <Text style={{ fontSize: 17 }}>Fastrack</Text>
               <CheckBox
                 checked={this.isBrandchecked(1)}
                 onPress={this.brand1}
@@ -1488,7 +1405,7 @@ export default class filter extends Component {
                 justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 17 }}>Maui Jim</Text>
+              <Text style={{ fontSize: 17 }}>Wolf Eyes</Text>
               <CheckBox
                 checked={this.isBrandchecked(2)}
                 onPress={this.brand2}
@@ -1506,7 +1423,7 @@ export default class filter extends Component {
                 marginTop: screenHeight * 2,
               }}
             >
-              <Text style={{ fontSize: 17 }}>Oakley </Text>
+              <Text style={{ fontSize: 17 }}>Titan </Text>
               <CheckBox
                 checked={this.isBrandchecked(3)}
                 onPress={this.brand3}
@@ -1524,7 +1441,7 @@ export default class filter extends Component {
                 justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 17 }}>Polaroid</Text>
+              <Text style={{ fontSize: 17 }}>Velocity</Text>
               <CheckBox
                 checked={this.isBrandchecked(4)}
                 onPress={this.brand4}
@@ -1542,7 +1459,7 @@ export default class filter extends Component {
                 justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 17 }}>Titan</Text>
+              <Text style={{ fontSize: 17 }}>Image</Text>
               <CheckBox
                 checked={this.isBrandchecked(5)}
                 onPress={this.brand5}
@@ -1561,7 +1478,7 @@ export default class filter extends Component {
                 justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 17 }}>Fastrack</Text>
+              <Text style={{ fontSize: 17 }}>Idee</Text>
               <CheckBox
                 checked={this.isBrandchecked(6)}
                 onPress={this.brand6}
@@ -1579,7 +1496,7 @@ export default class filter extends Component {
                 justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 17 }}>Rayban</Text>
+              <Text style={{ fontSize: 17 }}>Irus</Text>
               <CheckBox
                 checked={this.isBrandchecked(7)}
                 onPress={this.brand7}
@@ -1588,6 +1505,117 @@ export default class filter extends Component {
               />
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={this.brand8}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: screenHeight * 2,
+                marginLeft: screenWidth * -10,
+                justifyContent: "space-around",
+              }}
+            >
+              <Text style={{ fontSize: 17 }}>K & D</Text>
+              <CheckBox
+                checked={this.isBrandchecked(8)}
+                onPress={this.brand8}
+                color="#0984e3"
+                style={{}}
+              />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.brand9}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: screenHeight * 2,
+                marginLeft: screenWidth * -10,
+                justifyContent: "space-around",
+              }}
+            >
+              <Text style={{ fontSize: 17 }}>Kyaans</Text>
+              <CheckBox
+                checked={this.isBrandchecked(9)}
+                onPress={this.brand9}
+                color="#0984e3"
+                style={{}}
+              />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.brand10}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: screenHeight * 2,
+                marginLeft: screenWidth * -10,
+                justifyContent: "space-around",
+              }}
+            >
+              <Text style={{ fontSize: 17 }}>Tag Hills</Text>
+              <CheckBox
+                checked={this.isBrandchecked(10)}
+                onPress={this.brand10}
+                color="#0984e3"
+                style={{}}
+              />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.brand11}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: screenHeight * 2,
+                marginLeft: screenWidth * -10,
+                justifyContent: "space-around",
+              }}
+            >
+              <Text style={{ fontSize: 17 }}>Knight Horse</Text>
+              <CheckBox
+                checked={this.isBrandchecked(11)}
+                onPress={this.brand11}
+                color="#0984e3"
+                style={{}}
+              />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={this.brand12}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: screenHeight * 2,
+                marginLeft: screenWidth * -10,
+                justifyContent: "space-around",
+              }}
+            >
+              <Text style={{ fontSize: 17 }}>Elvee</Text>
+              <CheckBox
+                checked={this.isBrandchecked(12)}
+                onPress={this.brand7}
+                color="#0984e3"
+                style={{}}
+              />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={this.brand13}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: screenHeight * 2,
+                marginLeft: screenWidth * -10,
+                justifyContent: "space-around",
+              }}
+            >
+              <Text style={{ fontSize: 17 }}>Elevator</Text>
+              <CheckBox
+                checked={this.isBrandchecked(13)}
+                onPress={this.brand7}
+                color="#0984e3"
+                style={{}}
+              />
+            </View>
+          </TouchableOpacity>
+
         </View>
       );
     }
@@ -1608,7 +1636,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(1)}
                 onPress={this.lcolor1}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 36 }}
+              // style={{ marginLeft: screenWidth * 36 }}
               />
             </View>
           </TouchableOpacity>
@@ -1626,7 +1654,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(2)}
                 onPress={this.lcolor2}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1644,7 +1672,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(3)}
                 onPress={this.lcolor3}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1662,7 +1690,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(4)}
                 onPress={this.lcolor4}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 32 }}
+              // style={{ marginLeft: screenWidth * 32 }}
               />
             </View>
           </TouchableOpacity>
@@ -1680,7 +1708,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(5)}
                 onPress={this.lcolor5}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 38 }}
+              // style={{ marginLeft: screenWidth * 38 }}
               />
             </View>
           </TouchableOpacity>
@@ -1698,7 +1726,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(6)}
                 onPress={this.lcolor6}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 38 }}
+              // style={{ marginLeft: screenWidth * 38 }}
               />
             </View>
           </TouchableOpacity>
@@ -1716,7 +1744,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(7)}
                 onPress={this.lcolor7}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 38 }}
+              // style={{ marginLeft: screenWidth * 38 }}
               />
             </View>
           </TouchableOpacity>
@@ -1734,7 +1762,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(8)}
                 onPress={this.lcolor8}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1753,7 +1781,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(9)}
                 onPress={this.lcolor9}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 35 }}
+              // style={{ marginLeft: screenWidth * 35 }}
               />
             </View>
           </TouchableOpacity>
@@ -1772,7 +1800,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(10)}
                 onPress={this.lcolor10}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 38 }}
+              // style={{ marginLeft: screenWidth * 38 }}
               />
             </View>
           </TouchableOpacity>
@@ -1791,7 +1819,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(11)}
                 onPress={this.lcolor11}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 37 }}
+              // style={{ marginLeft: screenWidth * 37 }}
               />
             </View>
           </TouchableOpacity>
@@ -1810,7 +1838,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(12)}
                 onPress={this.lcolor12}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 36 }}
+              // style={{ marginLeft: screenWidth * 36 }}
               />
             </View>
           </TouchableOpacity>
@@ -1828,7 +1856,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(13)}
                 onPress={this.lcolor13}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 38 }}
+              // style={{ marginLeft: screenWidth * 38 }}
               />
             </View>
           </TouchableOpacity>
@@ -1846,7 +1874,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(14)}
                 onPress={this.lcolor14}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1864,7 +1892,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(15)}
                 onPress={this.lcolor15}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 34 }}
+              // style={{ marginLeft: screenWidth * 34 }}
               />
             </View>
           </TouchableOpacity>
@@ -1882,7 +1910,7 @@ export default class filter extends Component {
                 checked={this.isLcolorchecked(16)}
                 onPress={this.lcolor16}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 33 }}
+              // style={{ marginLeft: screenWidth * 33 }}
               />
             </View>
           </TouchableOpacity>
@@ -1906,7 +1934,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(1)}
                 onPress={this.shape1}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 32 }}
+              // style={{ marginLeft: screenWidth * 32 }}
               />
             </View>
           </TouchableOpacity>
@@ -1924,7 +1952,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(2)}
                 onPress={this.shape2}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 23 }}
+              // style={{ marginLeft: screenWidth * 23 }}
               />
             </View>
           </TouchableOpacity>
@@ -1942,7 +1970,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(3)}
                 onPress={this.shape3}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 35 }}
+              // style={{ marginLeft: screenWidth * 35 }}
               />
             </View>
           </TouchableOpacity>
@@ -1960,7 +1988,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(4)}
                 onPress={this.shape4}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 30 }}
+              // style={{ marginLeft: screenWidth * 30 }}
               />
             </View>
           </TouchableOpacity>
@@ -1978,7 +2006,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(5)}
                 onPress={this.shape5}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 23 }}
+              // style={{ marginLeft: screenWidth * 23 }}
               />
             </View>
           </TouchableOpacity>
@@ -1996,7 +2024,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(6)}
                 onPress={this.shape6}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 32 }}
+              // style={{ marginLeft: screenWidth * 32 }}
               />
             </View>
           </TouchableOpacity>
@@ -2014,7 +2042,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(7)}
                 onPress={this.shape7}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 28 }}
+              // style={{ marginLeft: screenWidth * 28 }}
               />
             </View>
           </TouchableOpacity>
@@ -2032,7 +2060,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(8)}
                 onPress={this.shape8}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 33 }}
+              // style={{ marginLeft: screenWidth * 33 }}
               />
             </View>
           </TouchableOpacity>
@@ -2051,7 +2079,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(9)}
                 onPress={this.shape9}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 37 }}
+              // style={{ marginLeft: screenWidth * 37 }}
               />
             </View>
           </TouchableOpacity>
@@ -2070,7 +2098,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(10)}
                 onPress={this.shape10}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 32 }}
+              // style={{ marginLeft: screenWidth * 32 }}
               />
             </View>
           </TouchableOpacity>
@@ -2089,7 +2117,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(11)}
                 onPress={this.shape11}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 22 }}
+              // style={{ marginLeft: screenWidth * 22 }}
               />
             </View>
           </TouchableOpacity>
@@ -2108,7 +2136,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(12)}
                 onPress={this.shape12}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 32 }}
+              // style={{ marginLeft: screenWidth * 32 }}
               />
             </View>
           </TouchableOpacity>
@@ -2126,7 +2154,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(13)}
                 onPress={this.shape13}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 32 }}
+              // style={{ marginLeft: screenWidth * 32 }}
               />
             </View>
           </TouchableOpacity>
@@ -2144,7 +2172,7 @@ export default class filter extends Component {
                 checked={this.isShapechecked(14)}
                 onPress={this.shape14}
                 color="#0984e3"
-                // style={{ marginLeft: screenWidth * 27 }}
+              // style={{ marginLeft: screenWidth * 27 }}
               />
             </View>
           </TouchableOpacity>
@@ -2189,7 +2217,7 @@ export default class filter extends Component {
                 width: screenWidth * 38,
                 alignSelf: "center",
                 padding: 10,
-                backgroundColor: this.state.button1,
+                backgroundColor: this.state.pressed1 ? '#00d2d3' : 'white',
                 height: screenHeight * 7,
                 borderRightColor: "#0984e3",
                 borderRightWidth: 0.5,
@@ -2198,7 +2226,7 @@ export default class filter extends Component {
               <Text
                 style={{
                   fontSize: 15,
-                  color: this.state.text1,
+                  color: this.state.pressed1 ? 'white' : 'black',
                 }}
               >
                 Brands
@@ -2212,7 +2240,7 @@ export default class filter extends Component {
                 width: screenWidth * 38,
                 alignSelf: "center",
                 padding: 10,
-                backgroundColor: this.state.button2,
+                backgroundColor: this.state.pressed2 ? '#00d2d3' : 'white',
                 height: screenHeight * 7,
 
                 borderRightColor: "black",
@@ -2221,7 +2249,7 @@ export default class filter extends Component {
             >
               <Text
                 style={{
-                  color: this.state.text2,
+                  color: this.state.pressed2 ? 'white' : 'black',
                   fontSize: 15,
                 }}
               >
@@ -2236,7 +2264,7 @@ export default class filter extends Component {
                 width: screenWidth * 38,
                 alignSelf: "center",
                 padding: 10,
-                backgroundColor: this.state.button3,
+                backgroundColor: this.state.pressed3 ? '#00d2d3' : 'white',
                 height: screenHeight * 7,
 
                 borderRightColor: "black",
@@ -2245,7 +2273,7 @@ export default class filter extends Component {
             >
               <Text
                 style={{
-                  color: this.state.text3,
+                  color: this.state.pressed3 ? 'white' : 'black',
                   fontSize: 15,
                 }}
               >
@@ -2260,7 +2288,7 @@ export default class filter extends Component {
                 width: screenWidth * 38,
                 alignSelf: "center",
                 padding: 10,
-                backgroundColor: this.state.button4,
+                backgroundColor: this.state.pressed4 ? '#00d2d3' : 'white',
                 height: screenHeight * 7,
 
                 borderRightColor: "black",
@@ -2269,7 +2297,7 @@ export default class filter extends Component {
             >
               <Text
                 style={{
-                  color: this.state.text4,
+                  color: this.state.pressed4 ? 'white' : 'black',
                   fontSize: 15,
                 }}
               >
@@ -2284,7 +2312,7 @@ export default class filter extends Component {
                 width: screenWidth * 38,
                 alignSelf: "center",
                 padding: 10,
-                backgroundColor: this.state.button5,
+                backgroundColor: this.state.pressed5 ? '#00d2d3' : 'white',
                 height: screenHeight * 7,
 
                 borderRightColor: "black",
@@ -2293,7 +2321,7 @@ export default class filter extends Component {
             >
               <Text
                 style={{
-                  color: this.state.text5,
+                  color: this.state.pressed5 ? 'white' : 'black',
                   fontSize: 15,
                 }}
               >
@@ -2308,7 +2336,7 @@ export default class filter extends Component {
                 width: screenWidth * 38,
                 alignSelf: "center",
                 padding: 10,
-                backgroundColor: this.state.button6,
+                backgroundColor: this.state.pressed6 ? '#00d2d3' : 'white',
                 height: screenHeight * 7,
 
                 borderRightColor: "black",
@@ -2317,7 +2345,7 @@ export default class filter extends Component {
             >
               <Text
                 style={{
-                  color: this.state.text6,
+                  color: this.state.pressed6 ? 'white' : 'black',
                   fontSize: 15,
                 }}
               >
@@ -2332,7 +2360,7 @@ export default class filter extends Component {
                 width: screenWidth * 38,
                 alignSelf: "center",
                 padding: 10,
-                backgroundColor: this.state.button7,
+                backgroundColor: this.state.pressed7 ? '#00d2d3' : 'white',
                 height: screenHeight * 7,
 
                 borderRightColor: "black",
@@ -2341,7 +2369,7 @@ export default class filter extends Component {
             >
               <Text
                 style={{
-                  color: this.state.text7,
+                  color: this.state.pressed7 ? 'white' : 'black',
                   fontSize: 15,
                 }}
               >
@@ -2365,7 +2393,7 @@ export default class filter extends Component {
             borderColor: "#00d2d3",
             borderRadius: 12,
             marginLeft: screenWidth * -45,
-            marginTop: screenHeight * 27,
+            marginTop: screenHeight * 17,
             backgroundColor: this.state.button7,
           }}
         >
@@ -2382,7 +2410,7 @@ export default class filter extends Component {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={this.frameShape}
+          onPress={this.apply}
           style={{
             width: screenWidth * 40,
             padding: 10,

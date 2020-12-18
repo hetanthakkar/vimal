@@ -11,25 +11,14 @@ import {
   Image,
   Dimensions,
 } from "react-native";
-import {
-  Item,
-  Input,
-  Button,
-  Container,
-  Header,
-  List,
-  ListItem,
-  Left,
-  Body,
-  Right,
-  Thumbnail,
-} from "native-base";
+import GestureRecognizer from 'react-native-swipe-gestures';
+
 import Icon from "react-native-vector-icons/Ionicons";
 import Category from "./category1";
 import Carousel from "./slide";
-// import { Appbar } from "react-native-paper";
+import { Appbar } from "react-native-paper";
 import { dummyData } from "./data";
-import { Feather, AntDesign } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 import { TouchableOpacity } from "react-native-gesture-handler";
 var screenWidth = Math.round(Dimensions.get("window").width) / 100;
@@ -37,6 +26,20 @@ var screenHeight = Math.round(Dimensions.get("window").height) / 100;
 const { height, width } = Dimensions.get("window");
 
 class Explore extends Component {
+  onSwipeLeft(gestureState) {
+
+    this.setState({ gender: "women" })
+        this.setState({myText: 'You swiped left!'});
+  }
+ 
+  onSwipeRight(gestureState) {
+    this.setState({ gender: "men" })
+
+    this.setState({myText: 'You swiped right!'});
+  }
+  componentDidMount(){
+    console.log(JSON.stringify(this.props.navigation.getParam()))
+  }
   componentWillMount() {
     this.startHeaderHeight = 80;
     if (Platform.OS == "android") {
@@ -44,6 +47,9 @@ class Explore extends Component {
     }
   }
   state = {
+    myText: 'I\'m ready to get swiped!',
+    gestureName: 'none',
+    backgroundColor: '#fff',
     gender: "men",
   };
   rendereye = () => {
@@ -89,6 +95,10 @@ class Explore extends Component {
   _onMore = () => console.log("Shown more");
 
   render() {
+    const config = {
+      velocityThreshold: 0.3,
+      directionalOffsetThreshold: 80
+    };
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView style={{ flex: 1, backgroundColor: "#dfe6e9" }}>
@@ -157,6 +167,7 @@ class Explore extends Component {
             <Carousel data={dummyData} />
           </View>
           <ScrollView scrollEventThrottle={16}>
+
             <View
               style={{
                 flexDirection: "row",
@@ -164,6 +175,7 @@ class Explore extends Component {
                 marginTop: 10,
               }}
             >
+         
               <TouchableOpacity
                 onPress={() => this.setState({ gender: "men" })}
                 style={{
@@ -207,8 +219,14 @@ class Explore extends Component {
                   WOMEN
                 </Text>
               </TouchableOpacity>
+              
             </View>
 
+            <GestureRecognizer
+        onSwipeLeft={(state) => this.onSwipeLeft(state)}
+        onSwipeRight={(state) => this.onSwipeRight(state)}
+        config={config}
+                >
             <ScrollView
               style={{
                 marginTop: screenHeight * 2,
@@ -287,6 +305,7 @@ class Explore extends Component {
                 </TouchableOpacity>
               </View>
             </ScrollView>
+            </GestureRecognizer>
 
             <View
               style={{ flex: 1, backgroundColor: "#dfe6e9", paddingTop: 20 }}
